@@ -150,7 +150,7 @@ function FilterMinMax({toggleFilterModal}) {
            }
              {
             location.pathname==="/homedesignsecond" && 
-            <div id="detail-image-11" style={{borderLeft:"2px solid black",paddingLeft:"10px"}}>
+            <div id="detail-image-11" style={{borderLeft:"2px solid black",paddingLeft:"10px",marginLeft:"18px"}}>
               <div onClick={() => handleClick(0)}>
                 <PiBuildingApartmentFill
                   size={16}
@@ -236,7 +236,7 @@ function FilterMinMax({toggleFilterModal}) {
            }
              {
             location.pathname==="/homedesign" && 
-            <div id="detail-image-11" style={{borderLeft:"2px solid black",paddingLeft:"10px"}}>
+            <div id="detail-image-11" style={{borderLeft:"2px solid black",paddingLeft:"10px",marginLeft:"18px"}}>
               <div onClick={() => handleClick(0)}>
                 <TbHomeFilled
                   size={16}
