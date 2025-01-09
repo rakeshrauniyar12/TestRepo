@@ -1,0 +1,11 @@
+.sticky-filter-1 {
+    position: sticky;
+    top: 4.5rem;
+    background-color: #fff;
+    padding: 0.3rem 4rem;
+    z-index: 997;
+    animation-delay: 0.2s;
+  }
+  
+
+  
