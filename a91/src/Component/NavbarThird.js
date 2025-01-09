@@ -20,6 +20,7 @@ function NavbarThird({showLogin,setShowLogin,setAccount,setShowSignupComponent,s
       const handleOptionClick = (path) => {
         navigate(path);
         setHomeDropdownOpen(false);
+        setActiveDropdown(null)
       };
       const handleLoginClick = () => {
         setShowLogin(!showLogin);
@@ -31,6 +32,11 @@ function NavbarThird({showLogin,setShowLogin,setAccount,setShowSignupComponent,s
       const handleSignupForm = () => {
         setShowSignupComponent(true);
         setAccount(false);
+      };
+      const goToPropertyPage = () => {
+        setAccount(false);
+        setActiveDropdown(null)
+        navigate("/property");
       };
       const goToDetailPage = () => {
         setAccount(false);
@@ -147,6 +153,9 @@ function NavbarThird({showLogin,setShowLogin,setAccount,setShowSignupComponent,s
                     >
                       Register as Channel Partner
                     </p>
+                    <p className="account-option" onClick={goToPropertyPage}>
+                Property
+              </p>
                   </div>
                 )}
               </div>

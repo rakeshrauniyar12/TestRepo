@@ -5,7 +5,7 @@ import FilterModal from './FilterModal';
 import { useLocation } from 'react-router-dom';
 import "../Style/FilterMinMax.css"
 import { TbHomeFilled } from "react-icons/tb";
-
+import { PiBuildingApartmentFill } from "react-icons/pi";
 function FilterMinMax({toggleFilterModal}) {
   const location = useLocation();
   // const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
@@ -58,13 +58,13 @@ function FilterMinMax({toggleFilterModal}) {
                 </div>
               </div>
             </div>
-            <div
+            {/* <div
               className="divide-line-11"
               style={{ marginLeft: "15px" }}
-            ></div>
+            ></div> */}
            {
             location.pathname==="/homedesignfirst" && 
-            <div id="detail-image-11" style={{borderLeft:"2px solid black",paddingLeft:"10px"}}>
+            <div id="detail-image-11" style={{borderLeft:"2px solid black",paddingLeft:"10px",marginLeft:"18px"}}>
               <div onClick={() => handleClick(0)}>
                 <TbHomeFilled
                   size={16}
@@ -152,7 +152,7 @@ function FilterMinMax({toggleFilterModal}) {
             location.pathname==="/homedesignsecond" && 
             <div id="detail-image-11" style={{borderLeft:"2px solid black",paddingLeft:"10px"}}>
               <div onClick={() => handleClick(0)}>
-                <TbHomeFilled
+                <PiBuildingApartmentFill
                   size={16}
                   style={{
                     color: active === 0 ? "var(--primary)" : "black",
@@ -164,11 +164,11 @@ function FilterMinMax({toggleFilterModal}) {
                     fontWeight: active === 0 ? "bold" : "",
                   }}
                 >
-                  1BHK
+                   {`>1000`}
                 </p>
               </div>
               <div onClick={() => handleClick(1)}>
-                <TbHomeFilled
+                <PiBuildingApartmentFill
                   size={20}
                   style={{
                     color: active === 1 ? "var(--primary)" : "black",
@@ -180,11 +180,11 @@ function FilterMinMax({toggleFilterModal}) {
                     fontWeight: active === 1 ? "bold" : "",
                   }}
                 >
-                  2BHK
+                    {`>2000`}
                 </p>
               </div>
               <div onClick={() => handleClick(2)}>
-                <TbHomeFilled
+                <PiBuildingApartmentFill
                   size={24}
                   style={{
                     color: active === 2 ? "var(--primary)" : "black",
@@ -196,11 +196,11 @@ function FilterMinMax({toggleFilterModal}) {
                     fontWeight: active === 2 ? "bold" : "",
                   }}
                 >
-                  3BHK
+                  {`>3000`}
                 </p>
               </div>
               <div onClick={() => handleClick(3)}>
-                <TbHomeFilled
+                <PiBuildingApartmentFill
                   size={28}
                   style={{
                     color: active === 3 ? "var(--primary)" : "black",
@@ -212,11 +212,11 @@ function FilterMinMax({toggleFilterModal}) {
                     fontWeight: active === 3 ? "bold" : "",
                   }}
                 >
-                  4BHK
+                  {`>4000`}
                 </p>
               </div>
               <div onClick={() => handleClick(4)}>
-                <TbHomeFilled
+                <PiBuildingApartmentFill
                   size={32}
                   style={{
                     color: active === 4 ? "var(--primary)" : "black",
@@ -228,7 +228,7 @@ function FilterMinMax({toggleFilterModal}) {
                     fontWeight: active === 4 ? "bold" : "",
                   }}
                 >
-                  5BHK
+                  4000+
                 </p>
               </div>
             </div>

@@ -125,6 +125,9 @@ const Navbar = () => {
         {!isMobile ? (
           <div
             className="nav-logo"
+            style={{
+              paddingLeft:location.pathname==="/property"?"20px":""
+            }}
             onClick={() => {
               navigate("/");
             }}
@@ -172,7 +175,7 @@ const Navbar = () => {
         <div
           className="nav-end-option-2"
           style={{
-            marginRight: location.pathname === "/property" ? "20px" : "",
+            width: location.pathname === "/property" ? "28%" : "",
           }}
         >
           {!isMobile ? (
@@ -191,9 +194,9 @@ const Navbar = () => {
               <p className="account-option" onClick={handleSignupForm}>
                 Register as Individual
               </p>
-              <p className="account-option" onClick={goToDetailPage}>
+              {/* <p className="account-option" onClick={goToDetailPage}>
                 Register as Channel Partner
-              </p>
+              </p> */}
               <p className="account-option" onClick={goToPropertyPage}>
                 Property
               </p>
@@ -207,228 +210,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {/* <div className="navbar-divider"></div> */}
-      {/* <div
-        className="nav-down-part"
-        
-      >
-        <div
-          className="nav-down-part-content"
-          // style={{ border: "1px solid red" }}
-        >
-         
-
-          {location.pathname === "/homedesign" && (
-            <>
-             <div style={{ display: "flex" }}>
-            <div>
-              <div>
-                <GiSettingsKnobs
-                  size={!isMobile ? 35 : 24}
-                  style={{
-                    transform: "rotate(90deg)",
-                  }}
-                />
-              </div>
-              <p>Filter</p>
-            </div>
-            <div className="divide-line-11"></div>
-            <div className="budget-div">
-              <div>
-                <p>₹ Budget</p>
-              </div>
-              <div className="div-min-max">
-                <div className="nav-min">Min</div>
-                <p>To</p>
-                <div className="nav-min">Max</div>
-              </div>
-            </div>
-            <div className="divide-line-11"></div>
-          </div>
-          <div
-              className="home-image-nav"
-              style={{
-                flexDirection:
-                  location.pathname === "/homedesign" ? "row" : "column",
-              }}
-            >
-              <div className="home-i-div-1">
-                <img className="home-nav-im-1" src={h21} />
-                <p>1BHK</p>
-              </div>
-              <div className="home-i-div-1">
-                <img className="home-nav-im-2" src={h22} />
-                <p>2BHK</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={h23} className="home-nav-im-3" />
-                <p>3BHK</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={h24} className="home-nav-im-4" />
-                <p>4BHK</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={h25} className="home-nav-im-5" />
-                <p>5BHK</p>
-              </div>
-            </div>
-            </>
-         
-          )}
-          {location.pathname === "/homedesignfirst" && (
-            <div
-              className="home-image-nav"
-              style={{
-                flexDirection:
-                  location.pathname === "/homedesignfirst" ? "row" : "column",
-              }}
-            >
-              <div className="home-i-div-1">
-                <img className="home-nav-im-1" src={p1} />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`>1000`}</p>
-              </div>
-              <div className="home-i-div-1">
-                <img className="home-nav-im-2" src={p1} />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`>2000`}</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={p1} className="home-nav-im-3" />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`>3000`}</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={p1} className="home-nav-im-4" />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`>4000`}</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={p1} className="home-nav-im-5" />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`4000+`}</p>
-              </div>
-            </div>
-          )}
-          {location.pathname === "/homedesignsecond" && (
-            <div
-              className="home-image-nav"
-              style={{
-                flexDirection:
-                  location.pathname === "/homedesignsecond" ? "row" : "column",
-              }}
-            >
-              <div
-                className="home-i-div-1"
-                style={{
-                  flexDirection:
-                    location.pathname === "/homedesignsecond" ? "none" : "",
-                }}
-              >
-                <img className="home-nav-im-1" src={p2} />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`>1000`}</p>
-              </div>
-              <div className="home-i-div-1">
-                <img className="home-nav-im-2" src={p2} />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`>2000`}</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={p2} className="home-nav-im-3" />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`>3000`}</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={p2} className="home-nav-im-4" />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`>4000`}</p>
-              </div>
-              <div className="home-i-div-1">
-                <img src={p2} className="home-nav-im-5" />
-                <p style={{ fontSize: "8px", fontWeight: "600" }}>{`4000+`}</p>
-              </div>
-            </div>
-          )}
-
-          {location.pathname === "/detailpage" && (
-            
-            <div style={{ display: "flex",alignItems:"center" }}>
-            <div >
-              <div>
-                <GiSettingsKnobs
-                  size={!isMobile ? 32 : 24}
-                  style={{
-                    transform: "rotate(90deg)",
-                  }}
-                />
-              </div>
-              <p>Filter</p>
-            </div>
-            <div className="divide-line-11"></div>
-            <div className="budget-div">
-              <div>
-                <p>₹ Budget</p>
-              </div>
-              <div className="div-min-max">
-                <div className="nav-min">Min</div>
-                <p>To</p>
-                <div className="nav-min">Max</div>
-              </div>
-            </div>
-            <div className="divide-line-11"></div>
-            <div id="detail-image-11">
-                <div>
-                   <TbHomeFilled size={16}/>
-                  <p>1BHK</p>
-                </div>
-                <div>
-                <TbHomeFilled size={20}/>
-                  <p>2BHK</p>
-                </div>
-                <div>
-                <TbHomeFilled size={24}/>
-                  <p>3BHK</p>
-                </div>
-                <div>
-                <TbHomeFilled size={28}/>
-                  <p>4BHK</p>
-                </div>
-                <div>
-                <TbHomeFilled size={32}/>
-                  <p>5BHK</p>
-                </div>
-              </div>
-             
-              <div className="divide-line-11"></div>
-                <div id="like-dis-div">
-                  <div>
-                   <BiSolidLike size={24}/>
-                    <p
-                      style={{ fontSize: "8px", fontWeight: "600" }}
-                    >{`1000`}</p>
-                  </div>
-                  <div>
-                   <BiSolidDislike size={24}/>
-                    <p
-                      style={{ fontSize: "8px", fontWeight: "600" }}
-                    >{`500`}</p>
-                  </div>
-                </div>
-                <div className="divide-line-11"></div>
-                <div>
-                  <GrCompare size={30}/>
-                </div>
-                <div className="divide-line-11"></div>
-                <div>
-                  <MdOutlineDateRange size={30}/>
-                </div>
-             
-          </div>
-          
-          )}
-        </div>
-        {location.pathname === "/detailpage" && (
-          <div className="repor-agent">
-            <div>
-              <img src={repor} />
-            </div>
-            <p>Report an agent</p>
-          </div>
-        )}
-      </div> */}
     </div>
   );
 };

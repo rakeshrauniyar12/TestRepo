@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 function NavSecond() {
     const navigate = useNavigate();
+    const location = useLocation();
      const [selectedCity, setSelectedCity] = useState("City");
       const [selectedOwnRent, setSelectedOwnRent] = useState("Own/Rent");
       const [selectedPurpose, setSelectedPurpose] = useState("Purpose");
@@ -26,6 +27,9 @@ function NavSecond() {
          const handleDropdownToggle = (dropdownName) => {
             setActiveDropdown((prev) => (prev === dropdownName ? null : dropdownName));
           };
+          if(location.pathname==="/property"){
+            return;
+          }
   return (
     <div className='nav-sec-11' style={{width:"45%"}}>
           <div className="nav-option-1">
