@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import "../Style/AddProperty.css";
 import "../Style/Property.css";
-import Photograph from "./Photograph";
-import ElectricityBill from "./ElectricityBill";
-import SelectAgent from "./SelectAgent";
-import PropertyDetails from "./PropertyDetails";
 import ActiveProperty from "./ActiveProperty";
 import UnderNegotiation from "./UnderNegotiation";
 import InactiveProperty from "./InactiveProperty";
 
 const Property = () => {
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("Active Property");
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -18,7 +14,6 @@ const Property = () => {
 
   return (
     <div className="add-property-main-container">
-      {/* Navigation Bar */}
       <div className="options-container-1">
         <div
           key={"Electricity Bill"}

@@ -1,3 +1,7 @@
+.yet-main-container {
+  width: 90%;
+  margin: auto;
+}
 .bookmark-checkbox-2[type="checkbox"] {
   appearance: none;
   width: 1.2rem;

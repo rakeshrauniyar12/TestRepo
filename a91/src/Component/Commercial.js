@@ -1,17 +1,16 @@
 import React,{useState} from "react";
-import "../Style/Home.css";
+import "../Style/Home.css"
 import h1 from "../Asset/Home/h1.png";
 import ApartmentCard from "./ApartmentCard";
 import FilterMinMax from "./FilterMinMax";
 import FilterModal from "./FilterModal";
-
-const HomeDesign2 = () => {
-  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false); 
+const Commercial = () => {
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const toggleFilterModal = () => {
-      setIsFilterModalOpen(!isFilterModalOpen);
-    };
+    setIsFilterModalOpen(!isFilterModalOpen);
+  };
   const products = [];
-  for (let r = 0; r < 6; r++) {
+  for(let r=0;r<6;r++){
     products.push({
       productImage: h1,
       productName: "Residential",
@@ -22,14 +21,14 @@ const HomeDesign2 = () => {
       productSaleType: "not for sale",
       productDistance: "9.8 Km away",
       isAvailable: true,
-    });
+    },)
   }
   return (
     <div className="home-container">
-       <FilterMinMax toggleFilterModal={toggleFilterModal}/>
+      <FilterMinMax toggleFilterModal={toggleFilterModal} width={"30%"}/>
       <div className="product-append-111">
         {products.map((product) => (
-          <ApartmentCard product={product} />
+          <ApartmentCard product={product}/>
         ))}
       </div>
       {isFilterModalOpen && (
@@ -47,4 +46,4 @@ const HomeDesign2 = () => {
   );
 };
 
-export default HomeDesign2;
+export default Commercial;

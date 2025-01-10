@@ -25,6 +25,7 @@
 .h-second-nav {
   width: 27%;
   display: flex;
+  column-gap: 20px;
   align-items: center;
 }
 .h-second-nav_ {
@@ -230,7 +231,7 @@
 }
 .account-details1 {
   position: fixed;
-  top: 13%;
+  top: 10%;
   right: 1%;
   padding: 5px;
   border-radius: 15px;

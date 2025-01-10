@@ -4,7 +4,8 @@ import h1 from "../Asset/Home/h1.png";
 import ApartmentCard from "./ApartmentCard";
 import FilterMinMax from "./FilterMinMax";
 import FilterModal from "./FilterModal";
-const HomeDesign = () => {
+import FilterOption from "./FilterOption";
+const Residential = () => {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false); 
   const toggleFilterModal = () => {
       setIsFilterModalOpen(!isFilterModalOpen);
@@ -46,9 +47,10 @@ const HomeDesign = () => {
       isAvailable: true,
     });
   }
+  const isLogin =false;
   return (
     <div className="home-container">
-      <FilterMinMax toggleFilterModal={toggleFilterModal}/>
+      <FilterMinMax toggleFilterModal={toggleFilterModal} isLogin={false}  width={"30%"}/>
       <div className="product-append-111">
         {products.map((product) => (
           <ApartmentCard product={product} />
@@ -72,4 +74,4 @@ const HomeDesign = () => {
   );
 };
 
-export default HomeDesign;
+export default Residential;

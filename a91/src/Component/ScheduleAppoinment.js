@@ -8,6 +8,82 @@ import TextField from "@mui/material/TextField";
 import ApartmentCard from "./ApartmentCard";
 import h2 from "../Asset/Home/h1.png";
 
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const theme = createTheme({
+  components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          "& fieldset": {
+            borderColor: "var(--primary) !important",
+          },
+        },
+      },
+    },
+    MuiPickersDay: {
+      styleOverrides: {
+        root: {
+          "&.Mui-selected": {
+            backgroundColor: "var(--primary) !important", // Green for selected date
+            color: "white !important", // White text
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "var(--primary) !important", // Always green label
+        },
+      },
+    },
+    MuiClock: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "white !important",
+        },
+        clock: {
+          backgroundColor: "var(--primary) !important", // Round dialer is green
+        },
+      },
+    },
+    MuiClockNumber: {
+      styleOverrides: {
+        root: {
+          color: "white !important", // Numbers are white
+        },
+      },
+    },
+    MuiClockPointer: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "white !important",
+        },
+        thumb: {
+          backgroundColor: "white !important",
+          borderColor: "var(--primary) !important",
+        },
+      },
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          justifyContent: "center",
+          "& button": {
+            backgroundColor: "white !important",
+            color: "var(--primary) !important",
+            "&:hover": {
+              backgroundColor: "var(--primary) !important",
+              color: "white !important",
+            },
+          },
+        },
+      },
+    },
+  },
+});
+
 const ScheduleAppointment = () => {
   const visitedApartments = [
     {
@@ -63,6 +139,8 @@ const ScheduleAppointment = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedProperties, setSelectedProperties] = useState([]);
 
+  const currentDate = new Date();
+
   const handleSelectAll = (isChecked) => {
     if (isChecked) {
       setSelectedProperties(visitedApartments.map((_, index) => index));
@@ -110,33 +188,36 @@ const ScheduleAppointment = () => {
         <p>Select All</p>
       </div>
       <div style={{ textAlign: "center", marginBottom: "70px" }}>
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-            }}
-          >
-            <div style={{ marginRight: "10px" }}>
-              <DatePicker
-                label="Select Date"
-                value={selectedDate}
-                onChange={(newValue) => setSelectedDate(newValue)}
-                renderInput={(params) => <TextField {...params} />}
-              />
+        <ThemeProvider theme={theme}>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <div style={{ marginRight: "10px" }}>
+                <DatePicker
+                  label="Select Date"
+                  value={selectedDate}
+                  onChange={(newValue) => setSelectedDate(newValue)}
+                  minDate={currentDate}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </div>
+              <div>
+                <MobileTimePicker
+                  label="Select Time"
+                  value={selectedDate}
+                  onChange={(newValue) => setSelectedDate(newValue)}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </div>
             </div>
-            <div>
-              <MobileTimePicker
-                label="Select Time"
-                value={selectedDate}
-                onChange={(newValue) => setSelectedDate(newValue)}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            </div>
-          </div>
-        </LocalizationProvider>
+          </LocalizationProvider>
+        </ThemeProvider>
       </div>
       <div
         className="product-append-111"

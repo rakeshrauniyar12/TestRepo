@@ -6,6 +6,20 @@
   width: 6%;
 }
 
+.calender_date_picker_div {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 42%;
+}
+.react-datepicker__day {
+  background-color: var(--primary) !important;
+  color: white !important;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
 .date-icon-div > div > img {
   width: 100%;
   object-fit: contain;

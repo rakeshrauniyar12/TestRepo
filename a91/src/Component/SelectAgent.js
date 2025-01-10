@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Style/SelectAgent.css";
-import { IoIosSearch } from "react-icons/io";
+import { BiSearchAlt } from "react-icons/bi";
 import primg from "../Asset/Home/primg.png";
 import { FcManager } from "react-icons/fc";
 
@@ -68,7 +68,7 @@ const SelectAgent = () => {
       <div className="select-search-div">
         <input placeholder="Search by Agent Name" />
         <div className="select-search-image">
-          <IoIosSearch color="white" size={28} />
+          <BiSearchAlt color="white" size={28} />
         </div>
       </div>
 
@@ -110,6 +110,14 @@ const SelectAgent = () => {
                 <div className="agent-row">
                   <p className="agent-key">No. Of Properties:</p>
                   <p className="agent-value">{agent.noOfProperties}</p>
+                </div>
+                <div className="agent-row">
+                  <u>
+                    <p className="agent-key">More Details</p>
+                  </u>
+                </div>
+                <div className="gstAdditionalDiv">
+                  <p>*GST Additional</p>
                 </div>
               </div>
             </div>

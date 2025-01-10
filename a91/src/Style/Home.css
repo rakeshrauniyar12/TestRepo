@@ -37,7 +37,7 @@
   z-index: 999;
 }
 .searchIconInPurpose {
-  background-color: var(--primary);
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,9 +152,6 @@
   margin-left: 20px;
 }
 
-.h-second-nav > div {
-  margin-left: 40px;
-}
 .h-second-icon- {
   font-size: 35px;
   margin-left: 20px;
@@ -318,4 +315,17 @@
   .sticky-filter-1 {
     top: 5rem;
   }
+}
+.productDetailsDiv_ {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.productDetailsDiv_ > .productKey_ {
+  min-width: 45px;
+  font-weight: 600;
+}
+.productDetailsDiv_ > .productValue_ {
+  font-weight: 600;
 }

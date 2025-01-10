@@ -1,12 +1,12 @@
 .detail-page-main-container {
-  width: 85%;
+  width: 100%;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 50px;
 }
 .options-container-2 {
   border-radius: 50px;
-  width: 100%;
+  width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
@@ -18,7 +18,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 50px;
+  position: sticky;
+  background-color: white;
+  top: 20.5%;
+  z-index: 997;
 }
 .option-div-active-option {
   background-color: var(--primary);

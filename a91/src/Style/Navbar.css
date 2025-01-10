@@ -61,7 +61,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  column-gap: 10px;
+  column-gap: 15px;
 }
 .divide-line-12 {
   border: 1px solid var(--primary);
@@ -73,14 +73,16 @@
   height: 20px;
 }
 .repor-agent {
+  display: flex;
+  align-items: flex-end;
+}
+.reportAgentDiv {
   border-radius: 50px;
   border: 1px solid var(--primary);
   display: flex;
-  gap: 10px;
-  width: 20%;
-  height: 40px;
   align-items: center;
   justify-content: center;
+  padding: 8px 30px;
 }
 .home-nav-im-2 {
   height: 25px;
